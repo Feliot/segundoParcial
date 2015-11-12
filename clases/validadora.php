@@ -3,21 +3,13 @@ session_start();
 
 class validadora
 {
-    public static function validarUsuario($usuario, $clave, $recordar)
+    public static function validarUsuario($usuario)
     {
-        if($usuario=="octavio@admin.com.ar" && $clave=="1234")
+        if($usuario=="José" || $usuario=="María")
         {			
-            if($recordar=="true")
-            {
-                setcookie("registro",$usuario,  time()+36000 , '/');
 
-            }else
-            {
-                setcookie("registro",$usuario,  time()-36000 , '/');
-
-            }
-            $_SESSION['registrado']="octavio";
-            $_SESSION['tiempo']= date("Y-m-d H:i:s");
+            setcookie("tiempo",date("Y-m-d H:i:s"),  time()-36000 , '/');
+            $_SESSION['registrado']=$usuario;
             return true;
 
 

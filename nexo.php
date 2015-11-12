@@ -48,10 +48,8 @@ switch ($queHago) {
 		break;
     case 'validarUsuario':
 			$usuario=$_POST['usuario'];
-            $clave=$_POST['clave'];
-            $recordar=$_POST['recordarme'];	
         
-			if(validadora::validarUsuario($usuario, $clave, $recordar))
+			if(validadora::validarUsuario($usuario))
                echo "ok";
             else
                echo "No-esta";
